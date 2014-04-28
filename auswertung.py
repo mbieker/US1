@@ -114,10 +114,17 @@ print vZB1mhz
 print "vZA1mhz: "
 print vZA1mhz
 
+plt.xlim(0, 0.13)
+plt.ylim(0, 0.0001)
+plt.xlabel("Zylinderlaenge [m]")
+plt.ylabel("Laufzeit [10^(-6)sec]")
 plt.plot([laengeZA,laengeZB,laengeZC],[tZA1mhz,tZB1mhz,tZC1mhz])
-plt.show()
-plt.plot([laengeZA,laengeZB,laengeZC],[tZA2mhz,tZB2mhz,tZC2mhz])
-plt.show()
+plt.savefig("Fig1.jpg")
+laengen=array([laengeZA,laengeZB,laengeZC])
+zeiten=array([tZA1mhz,tZB1mhz,tZC1mhz])
+lin_reg(laengen,zeiten)
+'''plt.plot([laengeZA,laengeZB,laengeZC],[tZA2mhz,tZB2mhz,tZC2mhz])
+plt.show()'''
 
 #Teil B:
     
@@ -138,4 +145,12 @@ print vdZB
 print "vdZA:"
 print vdZA
 
+#Teil C:
 
+tvonunten=array([11.7,17.9,24.1,30.4,36.2,42.0,47.8,13.2,45.0,46.1])
+tvonoben =array([43.6,40.8,35.6,30.0,24.4,18.3,12.2,41.7,16.1,14.9])
+
+
+#Teil D:
+
+zeiten=array([11.7,18.3,25.3,69.8])
