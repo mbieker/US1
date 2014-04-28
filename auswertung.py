@@ -76,6 +76,7 @@ def lin_reg(x,y):
     m_err = sy *sqrt(N/(N*sumxx - sumx**2))
     b_err= m_err * sqrt(sumxx/N)
     return ufloat(m,m_err), ufloat(b,b_err)
+  
     
     
 laengeZA = 0.0397
@@ -114,18 +115,21 @@ print vZB1mhz
 print "vZA1mhz: "
 print vZA1mhz
 
-plt.xlim(0, 0.13)
+x=linspace(0,0.25)
+plt.xlim(0, 0.25)
 plt.ylim(0, 0.0001)
-plt.xlabel("Zylinderlaenge [m]")
+plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
 plt.ylabel("Laufzeit [10^(-6)sec]")
-plt.plot([laengeZA,laengeZB,laengeZC],[tZA1mhz,tZB1mhz,tZC1mhz])
+plt.plot([2*laengeZA,2*laengeZB,2*laengeZC],[tZA1mhz,tZB1mhz,tZC1mhz])
+plt.plot(0.0007302091055575644*x+2.070563067616667e-06)
 plt.savefig("Fig1.jpg")
-laengen=array([laengeZA,laengeZB,laengeZC])
+laengen=array([2*laengeZA,2*laengeZB,2*laengeZC])
 zeiten=array([tZA1mhz,tZB1mhz,tZC1mhz])
-lin_reg(laengen,zeiten)
-'''plt.plot([laengeZA,laengeZB,laengeZC],[tZA2mhz,tZB2mhz,tZC2mhz])
-plt.show()'''
+print lin_reg(laengen,zeiten)
 
+
+print "ghjk"
+print 1/0.0003651045527787822
 #Teil B:
     
 tdZC = 0.0000451
