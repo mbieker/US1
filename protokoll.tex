@@ -23,7 +23,7 @@ germandbls={ß},
 \author{Martin Bieker\\
 		Julian Surmann\\
 		\\
-		Durchgef\"{u}hrt am 15.04.2014\\
+		Durchgef\"{u}hrt am 22.04.2014\\
 		TU Dortmund}
 \date{}
 \usepackage{graphicx}
@@ -38,7 +38,7 @@ germandbls={ß},
 
 
 \section{Einleitung}
-Ultraschall wird in vielen Bereichen der Medizin und Technik als bilgebendes Verfahren und zur zerst\"orugsfreifen Werkstoffuntersuchung eingesetzt. In diesem Versuch sollen die Grundlagen dieser Technik untersucht werden.
+Ultraschall wird in vielen Bereichen der Medizin und Technik als bildgebendes Verfahren und zur zerst\"orungsfreien Werkstoffuntersuchung eingesetzt. In diesem Versuch sollen die Grundlagen dieser Technik untersucht werden.
 \section{Theorie}
 
 Schallwellen im Frequenzbereich von \SI{20}{\hertz} bis \SI{1}{\giga\hertz} werden als Ultraschall bezeichnet. Schallwellen sind Druckschwankungen, welche sich als longitudinale Wellen durch ein Medium ausbreiten. Die Ausbreitungsgeschwindigkeit $c$ h\"angt dabei vom Medium ab, in dem sich die Welle befindet. Propagiert der Schall von einem Medium in ein Anderes treten f\"ur Wellen typische Effekte wie zum Beispiel Brechung und Reflexion auf. Dieses Verhalten an Grenzfl\"achen wird im Rahmen der Ultraschalltechnik zur Untersuchung eines K\"orpers verwendet. 
@@ -54,11 +54,11 @@ Beim Brightness-Scan wird ein zweidimensionales Schnittbild der untersuchten Str
 \paragraph{TM-Scan} Beim Time-Motion-Scan werden laufend B-Scans in kurzen Abst\"anden erstellt, um Bewegungen innerhalb des untersuchten Objektes darzustellen.
 
 \section{Durchf\"uhrung }
-
+Die Messungen werden mit einem Messcomputer durchgeführt, an welchen über einen Verstärker verschiedene Ultraschallsonden angeschlossen werden können. Es können \SI{1}{\mega\hertz}, \SI{2}{\mega  \hertz} und \SI{4}{\mega\hertz}-Sonden verwendet werden. Die Messdaten werden dann mit einer speziellen Software auf dem Messcomputer als A-Scan oder B-Scan dargestellt.
 \subsection{Messung der Schallgeschwindigkeit in Acryl}
 Die Bestimmung der Schallgeschwindikeit durch eine Laufzeitmessung wird an drei zylinderf\"ormigen Proben durchgef\"uhrt. Es muss zuerst die Strecke, welche der Schall in den Proben zur\"ucklegt gemessen werden. Hierzu wird die H\"ohe der Zylinder mit Hilfe einer Schieblehre bestimmt.  
 \subsubsection{Impuls-Echo-Verfahren}
-Zur Messung der Laufzeit mittels Impuls-Echo-Verfahren wird eine \SI{2}{\mega\hertz}Ultraschall-Sonde an einen der Zylinder gekoppelt. Mit Hilfe eines A-Scans wird die Laufzeit in Abh\"angigkeit von der Zylinderh\"ohe bestimmt. Diese Messungen werden mit einer \SI{}{\mega\hertz} Sonde wiederholt. 
+Zur Messung der Laufzeit mittels Impuls-Echo-Verfahren wird eine \SI{2}{\mega\hertz} Ultraschall-Sonde an einen der Zylinder gekoppelt. Mit Hilfe eines A-Scans wird die Laufzeit in Abh\"angigkeit von der Zylinderh\"ohe bestimmt. Diese Messungen werden mit einer \SI{}{\mega\hertz} Sonde wiederholt. 
 \subsubsection{Durchschallungsverfahren}
 Bei dieser Messungen werden jeweils zwei \SI{2}{\mega\hertz} Sonden an die Strinseiten der Zylinder gekoppelt. Danach wird die Laufzeit des Schalls durch den Zylinder mit einem A-Scan ermittelt. Die Messung wird mit den anderen Zylindern wiederholt
 \subsection{Untersuchung eines Akryblocks auf Fehlstellen}
@@ -70,6 +70,54 @@ Danach wird um die Lage und Form der Bohrungen zu bestimmen ein B-Scan durchgef\
 \subsection{Vermessung eines  Augenmodells}
 Im letzten Versuchsteil sollen die Abmessungen eines Augenmodells bestimmt werden. Dazu wird die in Abbildung \ref{auge} gezeigt, eine \SI{2}{\mega\hertz} Sonde auf Hornhaut des Modells gekoppelt. Mit einem A-Scan werden die Reflexionen des Ultraschalls an Iris, Linse und Retina bestimmt.
 \section{Auswertung}
+\subsection{Bestimmung der Schallgeschwindigkeit mit dem Impuls-Echo-Verfahren}
+Die drei Acrylzylinder haben folgende Abmessungen:
+ \begin{table}[h]
+\centering
+ \begin{tabular}{|c||c|c|c|}
+ Zylinder & Zylinder 1 & Zylinder 2 & Zylinder 3 \\
+  Länge [m] & 0.0397 & 0.0804 & 0.01205 \\
+ \end{tabular}
+\caption{Maße der Acrylzylinder}
+\end{table}
+\newline Mit Hilfe der Sonden wurden folgende Laufzeiten des Echos ermittelt:
+ \begin{table}[h]
+\centering
+ \begin{tabular}{|c||c|c|c|}
+ Zylinder & Zylinder 1 & Zylinder 2 & Zylinder 3 \\
+ Laufzeit (2 MHz) [$10^{-6}s$] & 88.7 & 59.7 & 29.9 \\
+ Laufzeit (1 MHz) [$10^{-6}s$] & 90  & 60.9 & 31.0 \\
+ \end{tabular}
+\caption{Laufzeitmessung mit Impuls-Echo-Verfahren}
+\end{table}
+\newline
+Mit Hilfe der Formel ??? ergeben sich dann die Schallgeschwindigkeiten:
+\begin{table}[h]
+\centering
+ \begin{tabular}{|c||c|c|c|}
+ Zylinder & Zylinder 1 & Zylinder 2 & Zylinder 3 \\
+ $v_{Schall}$ (2 MHz) [m/s] & 2656 & 2693 & 2717 \\
+ $v_{Schall}$ (1 MHz) [m/s] & 2561  & 2640 & 2678 \\
+ \end{tabular}
+\caption{Schallgeschwindigkeit mit Impuls-Echo-Verfahren}
+\end{table}
+\newline
+Allerdings weisen diese Schallgeschwindigkeiten einen systematischen Fehler auf. Mit Hilfe von linearer Regression wird die Funktion der Zeit in Abhängigkeit von der Strecke aufgetragen. Die Umkehrung der Steigung dieser Funktion ist die eigentliche Schallgeschwindigkeit. Der Laufzeitfehler ist mit dem Y-Achsenschnittpunkt der Funktion gegeben. Die Schallgeschwindigkeiten der beiden Messungen ergeben sich damit zu 2738 m/s und 2748 m/s.
+Diese liegen mit einer Abweichung von weniger als 3 \%  an dem in der Literatur angegebenen Wert von 2670 m/s.
+\subsection{Bestimmung der Schallgeschwindigkeit mit dem Durchschallungs-Verfahren}
+
+Die Abmessungen der Acrylzylinder sind Abschnitt 4.1 zu entnehmen. Es ergeben sich folgende Werte für die Schallgeschwindigkeit:
+\begin{table}[h]
+\centering
+ \begin{tabular}{|c||c|c|c|}
+ Zylinder & Zylinder 1 & Zylinder 2 & Zylinder 3 \\
+ $v_{Schall}$ (2 MHz) [m/s] & 2496 & 2619 & 2672 \\
+ \end{tabular}
+\caption{Schallgeschwindigkeit mit Impuls-Echo-Verfahren}
+\end{table}
+\subsection{Untersuchung eines Akrylblocks auf Fehlstellen}
+\subsection{Biometrische Untersuchung eines Augenmodells}
+
 
 \section{Quellen}
 \begin{enumerate}[{[}1{]}]
