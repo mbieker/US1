@@ -96,7 +96,7 @@ Mit Hilfe der Formel ??? ergeben sich dann die Schallgeschwindigkeiten:
 \caption{Schallgeschwindigkeit mit Impuls-Echo-Verfahren}
 \end{table}
 \newline
-Allerdings weisen diese Schallgeschwindigkeiten einen systematischen Fehler auf. Mit Hilfe von linearer Regression wird die Funktion der Zeit in Abhängigkeit von der Strecke aufgetragen. Die Umkehrung der Steigung dieser Funktion ist die eigentliche Schallgeschwindigkeit. Der Laufzeitfehler ist mit dem Y-Achsenschnittpunkt der Funktion gegeben. Die Schallgeschwindigkeiten der beiden Messungen ergeben sich damit zu 2738 m/s und 2748 m/s.
+Allerdings weisen diese Schallgeschwindigkeiten einen systematischen Fehler auf. Mit Hilfe von linearer Regression wird die Funktion der Zeit in Abhängigkeit von der Strecke aufgetragen. Die Umkehrung der Steigung dieser Funktion ist die eigentliche Schallgeschwindigkeit. Der Laufzeitfehler ist mit dem Y-Achsenschnittpunkt der Funktion gegeben. Die Schallgeschwindigkeiten der beiden Messungen ergeben sich damit zu 2739 m/s und 2748 m/s.
 Diese liegen mit einer Abweichung von weniger als 3 \%  an dem in der Literatur angegebenen Wert von 2670 m/s.
 \subsection{Bestimmung der Schallgeschwindigkeit mit dem Durchschallungs-Verfahren}
 
@@ -107,21 +107,39 @@ Die Abmessungen der Acrylzylinder sind Abschnitt 4.1 zu entnehmen. Es ergeben si
  Zylinder & Zylinder 1 & Zylinder 2 & Zylinder 3 \\
  $v_{Schall}$ (2 MHz) [m/s] & 2496 & 2619 & 2672 \\
  \end{tabular}
-\caption{Schallgeschwindigkeit mit Impuls-Echo-Verfahren}
+\caption{Schallgeschwindigkeit mit Durchschallungsverfahren}
 \end{table}
 \subsection{Untersuchung eines Acrylblocks auf Fehlstellen}
 Der zu untersuchende Acrylblock ist 0.08 m hoch, 0.15 m breit und 0.042 m tief. Die Messungen finden über die Strecke von 0.08 m statt. Aus der Wellenlaufzeit des Echos lassen sich mit Hilfe der Formel ??? die jeweiligen Abstände der Fehlstellen zur Messoberfläche berechnen. Die Laufzeitkorrektur ist hier schon angewandt. Wenn man beide Abstände von der Länge der Messstrecke abzieht, erhält man den Durchmesser der Fehlstellen. 
 \begin{table}[h]
 \centering
  \begin{tabular}{|c||c|c|c|}
- Zylinder & Zylinder 1 & Zylinder 2 & Zylinder 3 \\
- $v_{Schall}$ (2 MHz) [m/s] & 2496 & 2619 & 2672 \\
+Störstelle  & Tiefe (von Unten)[m] & Tiefe (von Oben)[m]& Durchmesser Bohrung [m] \\
+1 & 0.0589 & 0.0192 & 0.0019 \\
+2 & 0.0604 & 0.0176 & 0.0020 \\
+3 & 0.0132 & 0.0570 & 0.0098 \\
+4 & 0.0217 & 0.0531 & 0.0052 \\
+5 & 0.0302 & 0.0460 & 0.0038 \\
+6 & 0.0389 & 0.0383 & 0.0028 \\
+7 & 0.0468 & 0.0306 & 0.0025 \\
+8 & 0.0548 & 0.0223 & 0.0030 \\
+9 & 0.0627 & 0.0139 & 0.0034 \\
+10 & n.a. & 0.0061 & n.a. \\
+11 & 0.0152 & 0.0544 & 0.0104 \\
  \end{tabular}
-\caption{Schallgeschwindigkeit mit Impuls-Echo-Verfahren}
+\caption{Störstellen im Acrylblock}
 \end{table}
-
 \subsection{Biometrische Untersuchung eines Augenmodells}
-
+Beim A-Scan des Auges war es relativ schwierig, eindeutige Werte zu messen. Nach einiger Zeit stellten sich vier Maxima ein:
+\begin{table}[h]
+\centering
+ \begin{tabular}{|c|c|c|c|}
+ 0.0117 & 0.0183 & 0.0253 & 0.0698 \\
+ \end{tabular}
+\caption{Echozeiten im Augenmodell in ms}
+\end{table}
+\newline
+Die vier Zeiten lassen sich den vier Störstellen des Augeninneren zuordnen: Der Iris, Linsenanfang/Linsenende und Retina. 
 
 \section{Quellen}
 \begin{enumerate}[{[}1{]}]

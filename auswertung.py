@@ -115,24 +115,44 @@ print vZB1mhz
 print "vZA1mhz: "
 print vZA1mhz
 
-x=linspace(0,0.25)
-plt.xlim(0, 0.25)
-plt.ylim(0, 0.0001)
-plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
-plt.ylabel("Laufzeit [10^(-6)sec]")
-plt.plot([2*laengeZA,2*laengeZB,2*laengeZC],[tZA1mhz,tZB1mhz,tZC1mhz])
-x=linspace(0,0.25)
-plt.xlim(0, 0.25)
-plt.ylim(0, 0.0001)
-plt.plot(0.0003651045527787822*x+2.070563067616667e-06)
-plt.savefig("Fig1.jpg")
+
 laengen=array([2*laengeZA,2*laengeZB,2*laengeZC])
 zeiten=array([tZA1mhz,tZB1mhz,tZC1mhz])
 zeiten2=array([tZA2mhz,tZB2mhz,tZC2mhz])
-print "m und b aus linearer Regression der 1 MHz Sonde:"
-print lin_reg(laengen,zeiten)
-print "m und b aus linearer Regression der 2 MHz Sonde:"
-print lin_reg(laengen,zeiten2)
+m1, b1 = lin_reg(laengen,zeiten) ## Werte besser in Variablen speichern. 
+m2, b2 = lin_reg(laengen,zeiten2)
+print "m und b aus linearer Regression der 1 MHz Sonde: m=%s, b=%s" % (m1,b1) # so wird schoener formatiert und GERUNDET
+print "m und b aus linearer Regression der 2 MHz Sonde: m=%s, b=%s"% (m2,b2) 
+
+
+
+
+plt.plot([2*laengeZA,2*laengeZB,2*laengeZC],[tZA1mhz,tZB1mhz,tZC1mhz],'x')
+
+x=linspace(0,0.25)
+
+plt.plot(x,x*m1.n+b1.n) ## Hier musst du als erstes Argument nocheinmal 'x' angeben !!!!! 
+
+plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
+plt.ylabel("Laufzeit [10^(-6)sec]")
+plt.xlim(0, 0.25)
+plt.ylim(0, 0.0001)
+plt.savefig("Fig1.png")
+plt.close() # Hiermit wird die Zeichung nach dem speichern resettet
+
+
+plt.plot([2*laengeZA,2*laengeZB,2*laengeZC],[tZA2mhz,tZB2mhz,tZC2mhz],'x')
+
+x=linspace(0,0.25)
+
+plt.plot(x,x*m2.n+b2.n) ## Hier musst du als erstes Argument nocheinmal 'x' angeben !!!!! 
+
+plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
+plt.ylabel("Laufzeit [10^(-6)sec]")
+plt.xlim(0, 0.25)
+plt.ylim(0, 0.0001)
+plt.savefig("Fig2.png")
+plt.close() # Hiermit wird die Zeichung nach dem speichern resettet
 
 
 
@@ -181,5 +201,21 @@ print lochdicke
 
 
 #Teil D:
+print "Untersuchung des Augenmodells:"
+zeitenmikrosec=array([11.7,18.3,25.3,69.8])
+zeiten=zeitenmikrosec/1000000
+cL=2500
+cGK=1410
+sIris=0.5*(zeiten[0]-b2)*cGK
+print "sIris:"
+print sIris
+sLinse1=0.5*(zeiten[1]-b2)*cGK
+print "sLinse1:"
+print sLinse1
+sLinse2=sLinse1+0.5*(zeiten[2]-zeiten[1])*cL
+print "sLinse2:"
+print sLinse2
+sAuge=sLinse2+0.5*(zeiten[3]-zeiten[2])*cGK
+print "sAuge:"
+print sAuge
 
-zeiten=array([11.7,18.3,25.3,69.8])
