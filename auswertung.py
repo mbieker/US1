@@ -115,24 +115,30 @@ print vZB1mhz
 print "vZA1mhz: "
 print vZA1mhz
 
-x=linspace(0,0.25)
-plt.xlim(0, 0.25)
-plt.ylim(0, 0.0001)
-plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
-plt.ylabel("Laufzeit [10^(-6)sec]")
-plt.plot([2*laengeZA,2*laengeZB,2*laengeZC],[tZA1mhz,tZB1mhz,tZC1mhz])
-x=linspace(0,0.25)
-plt.xlim(0, 0.25)
-plt.ylim(0, 0.0001)
-plt.plot(0.0003651045527787822*x+2.070563067616667e-06)
-plt.savefig("Fig1.jpg")
+
 laengen=array([2*laengeZA,2*laengeZB,2*laengeZC])
 zeiten=array([tZA1mhz,tZB1mhz,tZC1mhz])
 zeiten2=array([tZA2mhz,tZB2mhz,tZC2mhz])
-print "m und b aus linearer Regression der 1 MHz Sonde:"
-print lin_reg(laengen,zeiten)
-print "m und b aus linearer Regression der 2 MHz Sonde:"
-print lin_reg(laengen,zeiten2)
+m1, b1 = lin_reg(laengen,zeiten) ## Werte besser in Variablen speichern. 
+m2, b2 = lin_reg(laengen,zeiten2)
+print "m und b aus linearer Regression der 1 MHz Sonde: m=%s, b=%s" % (m1,b1) # so wird schoener formatiert und GERUNDET
+print "m und b aus linearer Regression der 2 MHz Sonde: m=%s, b=%s"% (m2,b2) 
+
+
+
+
+plt.plot([2*laengeZA,2*laengeZB,2*laengeZC],[tZA1mhz,tZB1mhz,tZC1mhz],'x')
+
+x=linspace(0,0.25)
+
+plt.plot(x,x*m1.n+b1.n) ## Hier musst du als erstes Argument nocheinmal 'x' angeben !!!!! 
+
+plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
+plt.ylabel("Laufzeit [10^(-6)sec]")
+plt.xlim(0, 0.25)
+plt.ylim(0, 0.0001)
+plt.savefig("Fig1.png")
+plt.close() # Hiermit wird die Zeichung nach dem speichern resettet
 
 
 
