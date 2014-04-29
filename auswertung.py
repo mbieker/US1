@@ -145,6 +145,11 @@ plt.close() # Hiermit wird die Zeichung nach dem speichern resettet
 print "Errechnete Schallgeschwindigkeiten aus m:"
 print 1/0.0003651045527787822
 print 1/0.0003638669517641943
+print "Wellenlaufzeit durch Schutzschicht:"
+print "1 MHz:"
+print 2.070563067616667e-06
+print "2 MHz:"
+print 1.0690742703565743e-06
 #Teil B:
     
 tdZC = 0.0000451
@@ -166,8 +171,19 @@ print vdZA
 
 #Teil C:
 
-tvonunten=array([11.7,17.9,24.1,30.4,36.2,42.0,47.8,13.2,45.0,46.1])
-tvonoben =array([43.6,40.8,35.6,30.0,24.4,18.3,12.2,41.7,16.1,14.9])
+tvonuntenx=array([45.0,46.1,11.7,17.9,24.1,30.4,36.2,42.0,47.8,0.00,13.2])
+tvonobenx =array([16.1,14.9,43.6,40.8,35.6,30.0,24.4,18.3,12.2,6.5,41.7])
+tvonunten=tvonuntenx/1000000
+tvonoben=tvonobenx/1000000
+svonunten=0.5*(tvonunten-2.070563067616667e-06)*(0.5*(2738.94146865+2748.25728237))
+svonoben=0.5*(tvonoben-2.070563067616667e-06)*(0.5*(2738.94146865+2748.25728237))
+print "Ermittelte Abstaende der Loecher zur Oberflaeche von unten:"
+print svonunten
+print "Ermittelte Abstaende der Loecher zur Oberflaeche von oben:"
+print svonoben
+lochdicke=0.08-svonunten-svonoben
+print "Dicke der Loecher:"
+print lochdicke
 
 
 #Teil D:
