@@ -131,7 +131,7 @@ zeiten=array([tZA1mhz,tZB1mhz,tZC1mhz])
 print lin_reg(laengen,zeiten)
 
 
-print "ghjk"
+print "Errechnete Schallgeschwindigkeit aus m"
 print 1/0.0003651045527787822
 #Teil B:
     
