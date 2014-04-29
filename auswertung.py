@@ -164,7 +164,7 @@ print "vdZA:"
 print vdZA
 
 #Teil C:
-
+#
 tvonuntenx=array([45.0,46.1,11.7,17.9,24.1,30.4,36.2,42.0,47.8,0.00,13.2])
 tvonobenx =array([16.1,14.9,43.6,40.8,35.6,30.0,24.4,18.3,12.2,6.5,41.7])
 tvonunten=tvonuntenx/1000000
