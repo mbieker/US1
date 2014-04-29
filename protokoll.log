@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.28)  29 APR 2014 11:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.28)  29 APR 2014 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,55 +967,74 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
 
 ]
-Overfull \hbox (4.16156pt too wide) in paragraph at lines 67--67
+Overfull \hbox (8.76048pt too wide) in paragraph at lines 57--58
+\OT1/cmr/m/n/10.95 Die Mes-sun-gen wer-den mit einem Mess-com-puter durchgef^^?
+uhrt, an welchen ^^?uber einen Verst^^?arker
+ []
+
+
+LaTeX Warning: Reference `block' on page 2 undefined on input line 65.
+
+
+LaTeX Warning: Reference `auge' on page 2 undefined on input line 71.
+
+[2]
+Overfull \hbox (4.16156pt too wide) in paragraph at lines 73--73
 []\OT1/cmr/bx/n/12 Bestimmung der Schallgeschwindigkeit mit dem Impuls-Echo-Ver
 fahren 
  []
 
 
-Overfull \hbox (50.63419pt too wide) in paragraph at lines 68--101
+Overfull \hbox (50.63419pt too wide) in paragraph at lines 74--107
 \OT1/cmr/m/n/10.95 Der Laufzeit-fehler ist mit dem Y-Achsenschnittpunkt der Fun
 k-tion gegeben. Die Schallgeschwindigkeiten
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2]
-Overfull \hbox (26.6463pt too wide) in paragraph at lines 101--101
+Overfull \hbox (26.6463pt too wide) in paragraph at lines 107--107
 []\OT1/cmr/bx/n/12 Bestimmung der Schallgeschwindigkeit mit dem Durchschallungs
 -Verfahren 
  []
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 150.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 158.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 150.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
  [4]
-(./protokoll.aux) ) 
+(./protokoll.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 12249 strings out of 493304
- 246920 string characters out of 6139871
- 258515 words of memory out of 5000000
- 15494 multiletter control sequences out of 15000+600000
+ 12252 strings out of 493304
+ 246942 string characters out of 6139871
+ 261515 words of memory out of 5000000
+ 15497 multiletter control sequences out of 15000+600000
  13890 words of font info for 53 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  39i,11n,35p,10422b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmtt10.pfb>
-Output written on protokoll.pdf (5 pages, 126060 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmtt10.pfb>
+Output written on protokoll.pdf (5 pages, 127607 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream

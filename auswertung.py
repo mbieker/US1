@@ -133,6 +133,7 @@ x=linspace(0,0.25)
 
 plt.plot(x,x*m1.n+b1.n) ## Hier musst du als erstes Argument nocheinmal 'x' angeben !!!!! 
 
+
 plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
 plt.ylabel("Laufzeit [10^(-6)sec]")
 plt.xlim(0, 0.25)
@@ -147,11 +148,14 @@ x=linspace(0,0.25)
 
 plt.plot(x,x*m2.n+b2.n) ## Hier musst du als erstes Argument nocheinmal 'x' angeben !!!!! 
 
+
 plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
 plt.ylabel("Laufzeit [10^(-6)sec]")
 plt.xlim(0, 0.25)
 plt.ylim(0, 0.0001)
+
 plt.savefig("Fig2.png")
+
 plt.close() # Hiermit wird die Zeichung nach dem speichern resettet
 
 
