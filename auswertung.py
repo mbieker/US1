@@ -128,11 +128,17 @@ plt.plot(0.0003651045527787822*x+2.070563067616667e-06)
 plt.savefig("Fig1.jpg")
 laengen=array([2*laengeZA,2*laengeZB,2*laengeZC])
 zeiten=array([tZA1mhz,tZB1mhz,tZC1mhz])
+zeiten2=array([tZA2mhz,tZB2mhz,tZC2mhz])
+print "m und b aus linearer Regression der 1 MHz Sonde:"
 print lin_reg(laengen,zeiten)
+print "m und b aus linearer Regression der 2 MHz Sonde:"
+print lin_reg(laengen,zeiten2)
 
 
-print "Errechnete Schallgeschwindigkeit aus m"
+
+print "Errechnete Schallgeschwindigkeiten aus m:"
 print 1/0.0003651045527787822
+print 1/0.0003638669517641943
 #Teil B:
     
 tdZC = 0.0000451
