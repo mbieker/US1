@@ -1,7 +1,7 @@
 '''
 Created on 16.04.2014
 
-@author: martin
+@author: Julian Surmann & Martin Bieker
 '''
 from numpy import *
 from uncertainties import ufloat
@@ -13,9 +13,9 @@ from Tools import *
 laenge = array([0.0397,0.0804,0.1205])*2
 #Teil A:
 
-t2MHz = array([29.9,59.7,88.7])*1e-6
-t1MHz = array([31.0,60.9,90.0])*1e-6
 
+t1MHz = array([31.0,60.9,90.0])*1e-6
+t2MHz = array([29.9,59.7,88.7])*1e-6
 v2MHz = laenge/t2MHz
 
 v1MHz = laenge/t1MHz
@@ -25,10 +25,10 @@ print v2MHz
 print v1MHz
 
 
-m1, b1 = lin_reg(laenge,t1MHz) ## Werte besser in Variablen speichern. 
+m1, b1 = lin_reg(laenge,t1MHz) 
 m2, b2 = lin_reg(laenge,t2MHz)
-print "m und b aus linearer Regression der 1 MHz Sonde: m=%s, b=%s" % (m1,b1) # so wird schoener formatiert und GERUNDET
-print "m und b aus linearer Regression der 2 MHz Sonde: m=%s, b=%s"% (m2,b2) 
+print "lineare Regression 1 MHz : m=%s, b=%s" % (m1,b1)
+print "lineare Regression 2 MHz: m=%s, b=%s"% (m2,b2) 
 # Das ganze nochmal mit Curve Fit
 
 def y(x,m,b):
@@ -51,76 +51,98 @@ plt.plot(laenge,t1MHz*1e6,'x')
 
 x=linspace(0,0.25)
 
-plt.plot(x,(x*m1.n+b1.n)*1e6) ## Hier musst du als erstes Argument nocheinmal 'x' angeben !!!!! 
+plt.plot(x,(x*m1.n+b1.n)*1e6) 
 
 
 plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
 plt.ylabel(r"Laufzeit [$\mu s$]")
 plt.savefig("Fig1.png")
-plt.close() # Hiermit wird die Zeichung nach dem speichern resettet
+plt.close() 
 
 
 plt.plot(laenge,t2MHz*1e6,'x')
 
-plt.plot(x,(x*m2.n+b2.n)*1e6) ## Hier musst du als erstes Argument nocheinmal 'x' angeben !!!!! 
- 
+plt.plot(x,(x*m2.n+b2.n)*1e6)
 
+plt.xlabel("Zylinderlaenge (Hin- und Rueckweg) [m]")
+plt.ylabel(r"Laufzeit [$\mu s$]")
 plt.savefig("Fig2.png")
-
 plt.close() 
 
 
+#Regressionsdaten als Tabelle ausgeben
 
-print "Errechnete Schallgeschwindigkeiten aus m (linear):"
-print (1/m1)
-print (1/m2)
+c_1 = 1/m1
+c_2 = 1/m2
+data = array([[1,2],[b1,b2],[m1,m2],[c_1,c_2]])
+print make_LaTeX_table(data.T, 
+                       [r'$f/\si{\mega\hertz}$}', 'dt', 'm', 'c'])
 
-print "Errechnete Schallgeschwindigkeiten aus m_ (nonlinear):"
-print str(1/m1_)
-print str(1/m2_)
+#Durchschnitt berechnen
 
-
+c = 0.5*(c_1+c_2)
+print "Mittelwert c = %s" % c 
 #Teil B:
 
-  
-tdZC = 0.0000451
-tdZB = 0.0000307
-tdZA = 0.0000159
 
-vdZC = laengeZC/tdZC
-vdZB = laengeZB/tdZB
-vdZA = laengeZA/tdZA
+tD = array([15.9,30.7,45.1])*1e-6
 
-print ""
-print "Durchschallverfahren:"
-print "vdZC:"
-print vdZC
-print "vdZB:"
-print vdZB
-print "vdZA:"
-print vdZA
+m3, b3 = lin_reg(laenge/2,tD) 
+print """Durchschallung lineare Regression2 MHz :
+     m=%s, b=%s""" % (m3,b3)
+
+
+# Das ganze nochmal mit Curve Fit
+
+
+params, cov = curve_fit(y,laenge/2, tD)
+m3_ = ufloat(params[0],sqrt(cov[0][0]))
+b3_ = ufloat(params[1],sqrt(cov[1][1]))
+print "Mit curve_fit : m1=  %s und b1 = %s" %  (m3_,b3_)
+
+# Durchschallungsverfahren plotten
+
+plt.plot(laenge/2, tD*1e6,'x')
+
+x= linspace(0,0.13)
+
+plt.plot(x,(m3.nominal_value*x+b3.nominal_value)*1e6)
+plt.xlabel("Zylinderlaenge [m]")
+plt.ylabel(r"Laufzeit [$\mu s$]")
+plt.savefig("Fig3.png")
+
+
+print """m und b aus linearer Regression 
+        der 1 MHz Sonde: m=%s, b=%s""" % (m3,b3)
+print "Errechnete Durchschallverf. aus m (linear):"
+print (1/m3)
+
 
 #Teil C:
 #
-tvonuntenx=array([45.0,46.1,11.7,17.9,24.1,30.4,36.2,42.0,47.8,0.00,13.2])
-tvonobenx =array([16.1,14.9,43.6,40.8,35.6,30.0,24.4,18.3,12.2,6.5,41.7])
-tvonunten=tvonuntenx/1000000
-tvonoben=tvonobenx/1000000
-svonunten=0.5*(tvonunten-2.070563067616667e-06)*(0.5*(2738.94146865+2748.25728237))
-svonoben=0.5*(tvonoben-2.070563067616667e-06)*(0.5*(2738.94146865+2748.25728237))
-print "Ermittelte Abstaende der Loecher zur Oberflaeche von unten:"
-print svonunten
-print "Ermittelte Abstaende der Loecher zur Oberflaeche von oben:"
-print svonoben
-lochdicke=0.08-svonunten-svonoben
-print "Dicke der Loecher:"
-print lochdicke
+t_unten = array([45.0,46.1,11.7,17.9,24.1,30.4,
+                 36.2,42.0,47.8,0.00,13.2])*1e-6
+t_oben  = array([16.1,14.9,43.6,40.8,35.6,30.0,
+                 24.4,18.3,12.2,6.5,41.7])*1e-6
 
+t_unten = t_unten-b1_
+t_oben  = t_oben -b1_
+
+
+s_unten = 0.5*t_unten*c  
+s_oben = 0.5*t_oben*c
+
+d = 0.08 - s_unten-s_oben
+
+data = array([range(1,12),s_oben*1e2,
+               s_unten*1e2, d*1e2 ])# Laengen in centimetern
+
+print make_LaTeX_table(data.T, ['n','so','su', 'd'])
 
 #Teil D:
 print "Untersuchung des Augenmodells:"
-zeitenmikrosec=array([11.7,18.3,25.3,69.8])
-zeiten=zeitenmikrosec/1000000
+zeiten =array([11.7,18.3,25.3,69.8])*1e-6
+
 cL=2500
 cGK=1410
 sIris=0.5*(zeiten[0]-b2)*cGK
@@ -134,4 +156,4 @@ print "sLinse2:"
 print sLinse2
 sAuge=sLinse2+0.5*(zeiten[3]-zeiten[2])*cGK
 print "sAuge:"
-print sAuge"""
+print sAuge
